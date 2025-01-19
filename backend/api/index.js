@@ -10,10 +10,10 @@ let dbConnectionStatus = 'Not connected';
 
 // MySQL connection
 const db = mysql.createConnection({
-    host: 'kambaniru.iixcp.rumahweb.net',
-    user: 'terj2475_ale',
-    password: 'GJ+gQlQj$xGt',
-    database: 'terj2475_event_scheduler'
+    host: 'bv6fdbhd6ph1zjukxfkd-mysql.services.clever-cloud.com',
+    user: 'ufrr3nobbv0aqqua',
+    password: 'Aa4EltE2rO9KuXzXmdY2',
+    database: 'bv6fdbhd6ph1zjukxfkd'
 });
 
 db.connect(err => {
