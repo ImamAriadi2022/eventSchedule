@@ -6,25 +6,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let dbConnectionStatus = 'Not connected';
-
 // MySQL connection
 const db = mysql.createConnection({
-    host: 'kambaniru.iixcp.rumahweb.net',
-    user: 'terj2475_ale',
-    password: 'GJ+gQlQj$xGt',
-    database: 'terj2475_event_scheduler'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'event_scheduler'
 });
 
+
 db.connect(err => {
-    if (err) {
-        dbConnectionStatus = 'Failed to connect to MySQL';
-        console.error('Failed to connect to MySQL:', err);
-    } else {
-        dbConnectionStatus = 'Connected to MySQL';
-        console.log('Connected to MySQL');
-    }
+    if (err) throw err;
+    console.log('Connected to MySQL');
 });
+
 
 app.get('/', (req, res) => {
     res.send(`<p>${dbConnectionStatus}</p>`);
@@ -62,5 +57,3 @@ const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-module.exports = app;
