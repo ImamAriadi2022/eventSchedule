@@ -10,7 +10,7 @@ let dbConnectionStatus = 'Not connected';
 
 // MySQL connection
 const db = mysql.createConnection({
-    host: 'teralab.my.id',
+    host: '203.175.8.167',
     user: 'terj2475_ale',
     password: 'GJ+gQlQj$xGt',
     database: 'terj2475_event_scheduler'
