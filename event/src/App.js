@@ -16,14 +16,15 @@ function App() {
     const [showSplash, setShowSplash] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/events')
+        axios.get('https://backend-kenedy.vercel.app/events')
+        // axios.get('http://localhost:5000/events')
             .then(res => setEvents(res.data))
             .catch(err => console.error(err));
     }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/events', form)
+        axios.post('https://backend-kenedy.vercel.app/events', form)
             .then(res => {
                 setEvents([...events, res.data]);
                 setForm({ name: '', description: '', event_date: '', event_time: '' });
@@ -34,7 +35,8 @@ function App() {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/events/${id}`)
+        axios.delete(`https://backend-kenedy.vercel.app/${id}`)
+        // axios.delete(`http://localhost:5000/${id}`)
             .then(() => {
                 setEvents(events.filter(event => event.id !== id));
                 setModalMessage('Acara berhasil dihapus!');
