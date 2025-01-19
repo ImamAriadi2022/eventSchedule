@@ -7,22 +7,27 @@ app.use(cors());
 app.use(express.json());
 
 // MySQL connection
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'event_scheduler'
-});
 // const db = mysql.createConnection({
 //     host: 'localhost',
-//     user: 'terj2475_ale',
-//     password: 'GJ+gQlQj$xGt',
-//     database: 'terj2475_event_scheduler'
+//     user: 'root',
+//     password: '',
+//     database: 'event_scheduler'
 // });
+const db = mysql.createConnection({
+    host: '203.175.8.165',
+    user: 'terj2475_ale',
+    password: 'GJ+gQlQj$xGt',
+    database: 'terj2475_event_scheduler'
+});
 
 db.connect(err => {
     if (err) throw err;
     console.log('Connected to MySQL');
+});
+
+
+app.get('/', (req, res) => {
+    res.send(`<p>${dbConnectionStatus}</p>`);
 });
 
 // Get all events
