@@ -10,7 +10,7 @@ let dbConnectionStatus = 'Not connected';
 
 // MySQL connection
 const db = mysql.createConnection({
-    host: 'imam%.vercel.app',
+    host: 'teralab.my.id',
     user: 'terj2475_ale',
     password: 'GJ+gQlQj$xGt',
     database: 'terj2475_event_scheduler'
