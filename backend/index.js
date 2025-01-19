@@ -13,6 +13,12 @@ const db = mysql.createConnection({
     password: '',
     database: 'event_scheduler'
 });
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'terj2475_ale',
+//     password: 'GJ+gQlQj$xGt',
+//     database: 'terj2475_event_scheduler'
+// });
 
 db.connect(err => {
     if (err) throw err;
