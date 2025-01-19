@@ -35,8 +35,8 @@ function App() {
     };
 
     const handleDelete = (id) => {
-        axios.delete(`https://backend-kenedy.vercel.app/${id}`)
-        // axios.delete(`http://localhost:5000/${id}`)
+        axios.delete(`https://backend-kenedy.vercel.app/events/${id}`)
+        // axios.delete(`http://localhost:5000/events/${id}`)
             .then(() => {
                 setEvents(events.filter(event => event.id !== id));
                 setModalMessage('Acara berhasil dihapus!');
